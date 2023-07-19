@@ -24,9 +24,9 @@ provider "azurerm" {
 }
 
 resource "random_string" "uniquestring" {
-  length           = 20
-  special          = false
-  upper            = false
+  length  = 20
+  special = false
+  upper   = false
 }
 
 resource "azurerm_resource_group" "rg" {
@@ -38,7 +38,7 @@ module "securestorage" {
   source  = "app.terraform.io/CloudDave/securestorage/azurerm"
   version = "2.0.0"
   # insert required variables here
-  location = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location             = azurerm_resource_group.rg.location
+  resource_group_name  = azurerm_resource_group.rg.name
   storage_account_name = "stg${random_string.uniquestring.result}"
 }
