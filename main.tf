@@ -30,7 +30,7 @@ resource "random_string" "uniquestring" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = rg-terraform
+  name     = "rg-terraform"
   location = "UK South"
 }
 
@@ -40,5 +40,5 @@ module "securestorage" {
   # insert required variables here
   location = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  name = "stg${random_string.uniquestring.result}"
+  storage_account_name = "stg${random_string.uniquestring.result}"
 }
