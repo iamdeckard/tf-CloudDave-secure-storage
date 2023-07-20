@@ -1,3 +1,5 @@
+# Taken from https://developer.hashicorp.com/terraform/tutorials/automation/github-actions#
+
 name: "Terraform Apply"
 
 on:
