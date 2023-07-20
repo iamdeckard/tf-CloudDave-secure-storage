@@ -1,4 +1,4 @@
-name: "Terraform Apply"
+name: "Terraform-Apply"
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   terraform:
-    name: 'Terraform'
+    name: 'Terraform-Apply'
     runs-on: ubuntu-latest
     environment: production
 
